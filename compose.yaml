@@ -1,0 +1,13 @@
+services:
+  jellyfin-mcp:
+    build: .
+    container_name: jellyfin-mcp
+    restart: unless-stopped
+    ports:
+      - 8000:8000
+    environment:
+      - JELLYFIN_URL=http://172.17.0.1:8096
+      - JELLYFIN_API_KEY=YOUR_API_KEY_HERE   # Replace with your actual Jellyfin API key (see README for setup instructions)
+      - JELLYFIN_USER_EN=Bob
+      - JELLYFIN_USER_FR=Bob FR
+networks: {}
